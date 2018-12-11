@@ -1,0 +1,31 @@
+#heading {
+	font-family: georgia;
+	text-align: center;
+	font-variant: small-caps; 
+	font-size: 60px;
+}
+
+#subtitle {
+	font-family: georgia;
+	text-align: center;
+	font-size: 15px;
+	padding: 5px 5px 5px 5px;
+
+}
+
+#subheading {
+	font-family: georgia;
+	text-align: left;
+	font-variant: small-caps; 
+	font-size: 20px;
+}
+
+#inner {
+	border-top-color: black;
+	border-top-style: solid;
+}
+
+#head_container {
+	border-color: black;
+	border-style: solid;
+}

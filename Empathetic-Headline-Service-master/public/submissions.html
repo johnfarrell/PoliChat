@@ -1,0 +1,28 @@
+<html>
+<head>
+<base href="/">
+<title>Submit a Headline</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<div class="chat-column">
+	<a href="index.html">Return to Service</a><br><br>
+	<form method="post" action="/addHeadline">
+		<label>New Headline: </label>
+		<input type="text" name="headline"><br>
+		<label>Context: </label>
+		<input type="text" name="context"><br>
+		<input type="submit" value="Submit">
+		<p id="demo"></p>
+	</form>
+	<div>
+	<form method="post" action="/getData">
+		<input type="submit" value="View Results">
+		<p id="demo"></p>
+	</form>
+	</div>
+	</div>
+</body>
+</html>
