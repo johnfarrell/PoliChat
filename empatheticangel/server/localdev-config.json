@@ -1,0 +1,20 @@
+{
+  "watson_assistant_apikey": "uP6ZJwpTOW3ufCRigfQX9p61l5tjo0yt-fd0Ya9N6AAr",
+  "watson_assistant_iam_apikey_description": "Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:conversation:us-south:a/f2cc818013a84f5c80e6455da73c432e:f5140c93-93c1-4aa9-9018-24cdcf0a8cd4::",
+  "watson_assistant_iam_apikey_name": "auto-generated-apikey-9dd37bb3-806c-46f2-b8b0-a8787a0472ac",
+  "watson_assistant_iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Writer",
+  "watson_assistant_iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/f2cc818013a84f5c80e6455da73c432e::serviceid:ServiceId-ad07300e-c5e3-4efa-b12c-e1af93f1d717",
+  "watson_assistant_url": "https://gateway.watsonplatform.net/assistant/api",
+  "watson_conversation_apikey": "uP6ZJwpTOW3ufCRigfQX9p61l5tjo0yt-fd0Ya9N6AAr",
+  "watson_conversation_iam_apikey_description": "Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:conversation:us-south:a/f2cc818013a84f5c80e6455da73c432e:f5140c93-93c1-4aa9-9018-24cdcf0a8cd4::",
+  "watson_conversation_iam_apikey_name": "auto-generated-apikey-9dd37bb3-806c-46f2-b8b0-a8787a0472ac",
+  "watson_conversation_iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Writer",
+  "watson_conversation_iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/f2cc818013a84f5c80e6455da73c432e::serviceid:ServiceId-ad07300e-c5e3-4efa-b12c-e1af93f1d717",
+  "watson_conversation_url": "https://gateway.watsonplatform.net/assistant/api",
+  "watson_tone_analyzer_apikey": "r9mBfln8jVTSaNttgTTSl5qYURIe1tO_I0x2RLd9ZM1D",
+  "watson_tone_analyzer_iam_apikey_description": "Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:tone-analyzer:us-south:a/f2cc818013a84f5c80e6455da73c432e:1ef8ad27-83a6-4e98-817b-795879e2f238::",
+  "watson_tone_analyzer_iam_apikey_name": "auto-generated-apikey-7eac41b0-2bcd-4fd2-a7cd-4f2ea22050e3",
+  "watson_tone_analyzer_iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Writer",
+  "watson_tone_analyzer_iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/f2cc818013a84f5c80e6455da73c432e::serviceid:ServiceId-3dc2535a-2fd3-418a-a49a-1e843b94e453",
+  "watson_tone_analyzer_url": "https://gateway.watsonplatform.net/tone-analyzer/api"
+}

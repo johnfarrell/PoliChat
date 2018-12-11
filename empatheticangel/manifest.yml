@@ -1,0 +1,13 @@
+---
+applications:
+- instances: 1
+  timeout: 180
+  name: empatheticAngel
+  buildpack: sdk-for-nodejs
+  command: npm start
+  memory: 256M
+  domain: not-used.net
+  host: not-used
+  services:
+    - empatheticangel-conversation-1542165188382
+    - empatheticangel-toneanalyzer-1542165502127

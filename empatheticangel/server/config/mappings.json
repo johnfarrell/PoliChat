@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "watson_assistant_apikey": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:apikey",
+      "cloudfoundry:$['conversation'][0].credentials.apikey",
+      "env:service_watson_assistant:$.apikey",
+      "env:watson_assistant_apikey",
+      "file:/server/localdev-config.json:$.watson_assistant_apikey"
+    ]
+  },
+  "watson_assistant": {
+    "credentials": {
+      "searchPatterns": [
+        "user-provided:empatheticangel-conversation-1542165188382:url",
+        "cloudfoundry:watson_assistant",
+        "env:watson_assistant_credentials",
+        "file:/server/localdev-config.json:watson_assistant_credentials"
+      ]
+    }
+  },
+  "watson_assistant_iam_apikey_description": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:iam_apikey_description",
+      "cloudfoundry:$['conversation'][0].credentials.iam_apikey_description",
+      "env:service_watson_assistant:$.iam_apikey_description",
+      "env:watson_assistant_iam_apikey_description",
+      "file:/server/localdev-config.json:$.watson_assistant_iam_apikey_description"
+    ]
+  },
+  "watson_assistant_iam_apikey_name": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:iam_apikey_name",
+      "cloudfoundry:$['conversation'][0].credentials.iam_apikey_name",
+      "env:service_watson_assistant:$.iam_apikey_name",
+      "env:watson_assistant_iam_apikey_name",
+      "file:/server/localdev-config.json:$.watson_assistant_iam_apikey_name"
+    ]
+  },
+  "watson_assistant_iam_role_crn": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:iam_role_crn",
+      "cloudfoundry:$['conversation'][0].credentials.iam_role_crn",
+      "env:service_watson_assistant:$.iam_role_crn",
+      "env:watson_assistant_iam_role_crn",
+      "file:/server/localdev-config.json:$.watson_assistant_iam_role_crn"
+    ]
+  },
+  "watson_assistant_iam_serviceid_crn": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:iam_serviceid_crn",
+      "cloudfoundry:$['conversation'][0].credentials.iam_serviceid_crn",
+      "env:service_watson_assistant:$.iam_serviceid_crn",
+      "env:watson_assistant_iam_serviceid_crn",
+      "file:/server/localdev-config.json:$.watson_assistant_iam_serviceid_crn"
+    ]
+  },
+  "watson_assistant_url": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:url",
+      "cloudfoundry:$['conversation'][0].credentials.url",
+      "env:service_watson_assistant:$.url",
+      "env:watson_assistant_url",
+      "file:/server/localdev-config.json:$.watson_assistant_url"
+    ]
+  },
+  "watson_conversation_apikey": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:apikey",
+      "cloudfoundry:$['7045626d-55e3-4418-be11-683a26dbc1e5'][0].credentials.apikey",
+      "env:service_watson_conversation:$.apikey",
+      "env:watson_conversation_apikey",
+      "file:/server/localdev-config.json:$.watson_conversation_apikey"
+    ]
+  },
+  "watson_conversation": {
+    "credentials": {
+      "searchPatterns": [
+        "user-provided:empatheticangel-conversation-1542165188382:url",
+        "cloudfoundry:watson_conversation",
+        "env:watson_conversation_credentials",
+        "file:/server/localdev-config.json:watson_conversation_credentials"
+      ]
+    }
+  },
+  "watson_conversation_iam_apikey_description": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:iam_apikey_description",
+      "cloudfoundry:$['7045626d-55e3-4418-be11-683a26dbc1e5'][0].credentials.iam_apikey_description",
+      "env:service_watson_conversation:$.iam_apikey_description",
+      "env:watson_conversation_iam_apikey_description",
+      "file:/server/localdev-config.json:$.watson_conversation_iam_apikey_description"
+    ]
+  },
+  "watson_conversation_iam_apikey_name": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:iam_apikey_name",
+      "cloudfoundry:$['7045626d-55e3-4418-be11-683a26dbc1e5'][0].credentials.iam_apikey_name",
+      "env:service_watson_conversation:$.iam_apikey_name",
+      "env:watson_conversation_iam_apikey_name",
+      "file:/server/localdev-config.json:$.watson_conversation_iam_apikey_name"
+    ]
+  },
+  "watson_conversation_iam_role_crn": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:iam_role_crn",
+      "cloudfoundry:$['7045626d-55e3-4418-be11-683a26dbc1e5'][0].credentials.iam_role_crn",
+      "env:service_watson_conversation:$.iam_role_crn",
+      "env:watson_conversation_iam_role_crn",
+      "file:/server/localdev-config.json:$.watson_conversation_iam_role_crn"
+    ]
+  },
+  "watson_conversation_iam_serviceid_crn": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:iam_serviceid_crn",
+      "cloudfoundry:$['7045626d-55e3-4418-be11-683a26dbc1e5'][0].credentials.iam_serviceid_crn",
+      "env:service_watson_conversation:$.iam_serviceid_crn",
+      "env:watson_conversation_iam_serviceid_crn",
+      "file:/server/localdev-config.json:$.watson_conversation_iam_serviceid_crn"
+    ]
+  },
+  "watson_conversation_url": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-conversation-1542165188382:url",
+      "cloudfoundry:$['7045626d-55e3-4418-be11-683a26dbc1e5'][0].credentials.url",
+      "env:service_watson_conversation:$.url",
+      "env:watson_conversation_url",
+      "file:/server/localdev-config.json:$.watson_conversation_url"
+    ]
+  },
+  "watson_tone_analyzer_apikey": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-toneanalyzer-1542165502127:apikey",
+      "cloudfoundry:$['8cf956de-e7c2-4a02-8f3b-ae554fa55cf8'][0].credentials.apikey",
+      "env:service_watson_tone_analyzer:$.apikey",
+      "env:watson_tone_analyzer_apikey",
+      "file:/server/localdev-config.json:$.watson_tone_analyzer_apikey"
+    ]
+  },
+  "watson_tone_analyzer": {
+    "credentials": {
+      "searchPatterns": [
+        "user-provided:empatheticangel-toneanalyzer-1542165502127:url",
+        "cloudfoundry:watson_tone_analyzer",
+        "env:watson_tone_analyzer_credentials",
+        "file:/server/localdev-config.json:watson_tone_analyzer_credentials"
+      ]
+    }
+  },
+  "watson_tone_analyzer_iam_apikey_description": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-toneanalyzer-1542165502127:iam_apikey_description",
+      "cloudfoundry:$['8cf956de-e7c2-4a02-8f3b-ae554fa55cf8'][0].credentials.iam_apikey_description",
+      "env:service_watson_tone_analyzer:$.iam_apikey_description",
+      "env:watson_tone_analyzer_iam_apikey_description",
+      "file:/server/localdev-config.json:$.watson_tone_analyzer_iam_apikey_description"
+    ]
+  },
+  "watson_tone_analyzer_iam_apikey_name": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-toneanalyzer-1542165502127:iam_apikey_name",
+      "cloudfoundry:$['8cf956de-e7c2-4a02-8f3b-ae554fa55cf8'][0].credentials.iam_apikey_name",
+      "env:service_watson_tone_analyzer:$.iam_apikey_name",
+      "env:watson_tone_analyzer_iam_apikey_name",
+      "file:/server/localdev-config.json:$.watson_tone_analyzer_iam_apikey_name"
+    ]
+  },
+  "watson_tone_analyzer_iam_role_crn": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-toneanalyzer-1542165502127:iam_role_crn",
+      "cloudfoundry:$['8cf956de-e7c2-4a02-8f3b-ae554fa55cf8'][0].credentials.iam_role_crn",
+      "env:service_watson_tone_analyzer:$.iam_role_crn",
+      "env:watson_tone_analyzer_iam_role_crn",
+      "file:/server/localdev-config.json:$.watson_tone_analyzer_iam_role_crn"
+    ]
+  },
+  "watson_tone_analyzer_iam_serviceid_crn": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-toneanalyzer-1542165502127:iam_serviceid_crn",
+      "cloudfoundry:$['8cf956de-e7c2-4a02-8f3b-ae554fa55cf8'][0].credentials.iam_serviceid_crn",
+      "env:service_watson_tone_analyzer:$.iam_serviceid_crn",
+      "env:watson_tone_analyzer_iam_serviceid_crn",
+      "file:/server/localdev-config.json:$.watson_tone_analyzer_iam_serviceid_crn"
+    ]
+  },
+  "watson_tone_analyzer_url": {
+    "searchPatterns": [
+      "user-provided:empatheticangel-toneanalyzer-1542165502127:url",
+      "cloudfoundry:$['8cf956de-e7c2-4a02-8f3b-ae554fa55cf8'][0].credentials.url",
+      "env:service_watson_tone_analyzer:$.url",
+      "env:watson_tone_analyzer_url",
+      "file:/server/localdev-config.json:$.watson_tone_analyzer_url"
+    ]
+  }
+}
