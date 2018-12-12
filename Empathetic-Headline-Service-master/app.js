@@ -240,11 +240,15 @@ function getSenatorByState(state) {
     if(request.readyState == 4 && request.status == 200) {
       var jsonString = request.responseText;
       var data = JSON.parse(jsonString);
-      
-      name = data.results[0].first_name + " " + data.results[0].last_name;
-      name += " (" + data.results[0].party + ") and ";
-      name += data.results[1].first_name + " " + data.results[1].last_name;
-      name += " (" + data.results[1].party + ")";
+      name = ""
+	  for(var i=0; i < data.results.length; i++){
+		  name += "<a href='https://twitter.com/"+data.results[i].twitter_id+"' target='_blank'>";
+		  name += data.results[i].first_name + " " + data.results[i].last_name;
+		  name += "</a>"
+		  if(i !== data.results.length-1){
+			name += " (" + data.results[i].party + ") and ";
+		  }
+	  }
     }
   }
 
