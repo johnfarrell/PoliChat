@@ -281,20 +281,28 @@ function getHouseRepsByState(state, district) {
       if(data.results.length >= 5) {
         var x;
         for(x = 0; x < 4; x++) {
+		  name += "<a href='https://twitter.com/"+data.results[x].twitter_id+"' target='_blank'>";
           name += data.results[x].first_name + " " + data.results[x].last_name;
+		  name += "</a>";
           name += " (" + data.results[0].party + "), ";
         }
+		name += "<a href='https://twitter.com/"+data.results[4].twitter_id+"' target='_blank'>";
         name += data.results[4].first_name + " " + data.results[4].last_name;
+		name += "</a>";
         name += " (" + data.results[4].party + ")";
       }
       else {
         var numReps = data.results.length;
         var x;
         for(x = 0; x < numReps - 1; x++) {
+		  name += "<a href='https://twitter.com/"+data.results[x].twitter_id+"' target='_blank'>";
           name += data.results[x].first_name + " " + data.results[x].last_name;
+		  name += "</a>";
           name += " (" + data.results[x].party + "), ";
         }
+		name += "<a href='https://twitter.com/"+data.results[numReps-1].twitter_id+"' target='_blank'>";
         name += data.results[numReps-1].first_name + " " + data.results[numReps-1].last_name;
+		name += "</a>";
         name += " (" + data.results[numReps-1].party + ")";
       }
     }
