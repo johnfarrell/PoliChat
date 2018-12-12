@@ -151,7 +151,7 @@ var ConversationPanel = (function() {
       $("#div1").html(result);
       console.log("data: " + result);
       console.log(newPayload);
-			newPayload.output.text = result[0];
+			//newPayload.output.text = result[0];
 			//console.log(completed);
 		}});
    }

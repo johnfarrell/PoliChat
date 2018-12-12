@@ -227,21 +227,16 @@ function getSenatorList() {
   var name = "test";
 
   // Create a new connection to senator
-  request.onreadystatechange = function() {
+  request.onload = function() {
     if(request.readyState == 4 && request.status == 200) {
       var jsonString = request.responseText;
       var data = JSON.parse(jsonString);
-      // console.log(data.results[0].members);
-      // data.results[0].members.forEach(member => {
-      //   console.log(member.first_name + " " + member.last_name);
-      //   var m
-      // });
       console.log(data.results[0].members[0].first_name + " " + data.results[0].members[0].last_name)
       name = data.results[0].members[0].first_name + " " + data.results[0].members[0].last_name;
     }
   }
   
-  request.open('GET', 'https://api.propublica.org/congress/v1/115/house/members.json');
+  request.open('GET', 'https://api.propublica.org/congress/v1/115/house/members.json', false);
   request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R');
   request.send();
   
