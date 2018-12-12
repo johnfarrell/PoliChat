@@ -81,7 +81,7 @@ div {
 }
 
 .chat-column {
-  height: 93%;
+  height: 100%;
   padding: 0.9375rem 0 0.625rem 0;
   margin: auto;
   text-align: left;
