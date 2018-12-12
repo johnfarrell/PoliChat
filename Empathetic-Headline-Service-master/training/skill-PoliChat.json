@@ -1,0 +1,937 @@
+{
+  "name": "research_bot",
+  "intents": [
+    {
+      "intent": "representative_congress",
+      "examples": [
+        {
+          "text": "Who represents me in congress?"
+        },
+        {
+          "text": "who is my rep in congress"
+        },
+        {
+          "text": "who is my congress rep"
+        }
+      ],
+      "description": "User wants to know his congressional representatives"
+    },
+    {
+      "intent": "representative_general",
+      "examples": [
+        {
+          "text": "Who's my representative"
+        },
+        {
+          "text": "who's my rep"
+        },
+        {
+          "text": "Who represents me"
+        }
+      ],
+      "description": "User wants to know his representative"
+    },
+    {
+      "intent": "recent_bills",
+      "examples": [
+        {
+          "text": "What bills are active"
+        },
+        {
+          "text": "What are the recent bills"
+        },
+        {
+          "text": "what bills are active?"
+        },
+        {
+          "text": "what bills are currently active?"
+        }
+      ],
+      "description": "User wants to know the recent bills"
+    },
+    {
+      "intent": "house",
+      "examples": [
+        {
+          "text": "not congress"
+        },
+        {
+          "text": "the house"
+        },
+        {
+          "text": "house of representatives"
+        }
+      ],
+      "description": "User wants to know information for the House of Representatives"
+    },
+    {
+      "intent": "yes",
+      "examples": [
+        {
+          "text": "why not"
+        },
+        {
+          "text": "sure"
+        },
+        {
+          "text": "knock yourself out"
+        },
+        {
+          "text": "go ahead"
+        },
+        {
+          "text": "yes"
+        },
+        {
+          "text": "go for it"
+        },
+        {
+          "text": "yeah"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "help",
+      "examples": [
+        {
+          "text": "help"
+        },
+        {
+          "text": "What can you do?"
+        },
+        {
+          "text": "what is an example command"
+        },
+        {
+          "text": "What do you do?"
+        },
+        {
+          "text": "What are you?"
+        },
+        {
+          "text": "How can I use you?"
+        },
+        {
+          "text": "How do I use you?"
+        },
+        {
+          "text": "I don't know how to use you"
+        }
+      ],
+      "description": "Displays what the chatbot can do"
+    },
+    {
+      "intent": "congress",
+      "examples": [
+        {
+          "text": "not the house"
+        },
+        {
+          "text": "The congressional rep for Alaska"
+        },
+        {
+          "text": "congress"
+        }
+      ],
+      "description": "User wants to know information for congress"
+    },
+    {
+      "intent": "representative_house",
+      "examples": [
+        {
+          "text": "Who is my house representative?"
+        },
+        {
+          "text": "Who is my house rep?"
+        },
+        {
+          "text": "Who represents me in the house?"
+        }
+      ],
+      "description": "User wants to know his House of Representatives representative"
+    },
+    {
+      "intent": "no",
+      "examples": [
+        {
+          "text": "I would rather not."
+        },
+        {
+          "text": "nuh uh"
+        },
+        {
+          "text": "nope"
+        },
+        {
+          "text": "sigh no"
+        },
+        {
+          "text": "unfortunately no"
+        },
+        {
+          "text": "no way"
+        },
+        {
+          "text": "absolutely not"
+        },
+        {
+          "text": "no"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-person",
+      "values": []
+    },
+    {
+      "entity": "repType",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "House",
+          "patterns": [
+            "House of Representatives",
+            "House",
+            "house",
+            "house of representatives",
+            "house of reps"
+          ]
+        },
+        {
+          "type": "patterns",
+          "value": "Congress",
+          "patterns": [
+            "Congress",
+            "Congressional",
+            "congress",
+            "congressional",
+            "congress representatives"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "billSubject",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Law",
+          "synonyms": [
+            "Prison reform",
+            "criminal",
+            "justice system",
+            "death penalty",
+            "theft"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Health",
+          "synonyms": [
+            "health",
+            "healthcare",
+            "addiction",
+            "obesity",
+            "disease",
+            "mental health",
+            "medical",
+            "care",
+            "diseases",
+            "illness",
+            "obese",
+            "infection",
+            "diabetes",
+            "epidemic",
+            "mental",
+            "alcoholism"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Economics",
+          "synonyms": [
+            "Business",
+            "taxes",
+            "Job growth",
+            "labor",
+            "tax",
+            "jobs"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Animal Rights",
+          "synonyms": [
+            "animals",
+            "animal rights",
+            "species",
+            "humane treatment"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Environment",
+          "synonyms": [
+            "global warming",
+            "fracking",
+            "natural gas",
+            "oil spills",
+            "coals",
+            "water supply",
+            "recycling",
+            "electric cars",
+            "nuclear waste"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Education",
+          "synonyms": [
+            "education",
+            "college",
+            "graduation rates",
+            "illiteracy",
+            "literacy",
+            "textbooks",
+            "Highschool"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Alcohol",
+          "synonyms": [
+            "Drinking age",
+            "drinking",
+            "alcohol"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Transportation",
+          "synonyms": [
+            "drivers license",
+            "driving",
+            "roads",
+            "trains",
+            "public transportation"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "State",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Alaska",
+          "synonyms": [
+            "alaska",
+            "ak"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "gender",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "male",
+          "synonyms": [
+            "man",
+            "dude",
+            "guy",
+            "boy"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "female",
+          "synonyms": [
+            "girl",
+            "lady",
+            "woman"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    },
+    {
+      "entity": "sys-location",
+      "values": []
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "Answer questions about active legislation or legislators.",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "unrecognizedState",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I couldn't find that state, please try again."
+              },
+              {
+                "text": "Please enter the full name of the state."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1544548062060",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1544586021514"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_10_1544588126657",
+      "previous_sibling": "node_1_1544586021514"
+    },
+    {
+      "type": "standard",
+      "title": "testHouseState",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What is your congressional district?"
+              },
+              {
+                "text": "Go <a href=\"https://www.house.gov/htbin/findrep\">here</a> if you are unsure."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_4_1544548062060",
+      "context": {
+        "userLocation": "@sys-location"
+      },
+      "metadata": {},
+      "conditions": "@sys-location",
+      "dialog_node": "node_1_1544586021514"
+    },
+    {
+      "type": "standard",
+      "title": "parseYes",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What subject do you want to know more about?"
+              },
+              {
+                "text": "What subject of bills do you want to look into?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1544587126917",
+      "metadata": {},
+      "conditions": "#yes",
+      "dialog_node": "node_7_1544587256013",
+      "previous_sibling": "node_6_1544587197682"
+    },
+    {
+      "type": "standard",
+      "title": "parseNo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The most recent bills active in congress are ____"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_5_1544587126917",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "#no",
+      "dialog_node": "node_6_1544587197682"
+    },
+    {
+      "type": "standard",
+      "title": "handleSubject",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Current bills regarding @billSubject are"
+              },
+              {
+                "text": "Active legislation on the topic of @billSubject are"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1544587256013",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "@billSubject",
+      "dialog_node": "node_8_1544587290184"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1544547755573",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_6_1544549546323"
+      },
+      "conditions": "@sys-location",
+      "dialog_node": "node_13_1544589716700",
+      "previous_sibling": "node_11_1544588355456"
+    },
+    {
+      "type": "standard",
+      "title": "unrecognizedState",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I couldn't understand the state you entered."
+              },
+              {
+                "text": "I couldn't find that state, please enter the full name of the state."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1544547755573",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_6_1544549546323"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "node_9_1544588021954",
+      "previous_sibling": "node_6_1544549546323"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What state are you from?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1544547755573",
+      "metadata": {},
+      "dialog_node": "node_11_1544588355456",
+      "previous_sibling": "node_9_1544588021954"
+    },
+    {
+      "type": "standard",
+      "title": "getState",
+      "output": {
+        "text": {
+          "values": [
+            "The Congressional representative for @sys-location is ____"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_3_1544547755573",
+      "actions": [
+        {
+          "name": "/showSenators",
+          "type": "client",
+          "result_variable": "senatorList"
+        }
+      ],
+      "context": {
+        "variable_name": "@sys-location"
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "@sys-location",
+      "dialog_node": "node_6_1544549546323"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you want your Congress Representatives or House Representatives?"
+              },
+              {
+                "text": "I just need a little more information, do you want to know your House representatives or Congress Representatives?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1544547628098",
+      "context": {
+        "userLocation": "@sys-location"
+      },
+      "disabled": true,
+      "metadata": {},
+      "dialog_node": "node_14_1544589831874",
+      "previous_sibling": "node_4_1544548062060"
+    },
+    {
+      "type": "standard",
+      "title": "testHouse",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What state do you live in?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_2_1544547628098",
+      "metadata": {},
+      "conditions": "@repType:House",
+      "dialog_node": "node_4_1544548062060",
+      "previous_sibling": "node_3_1544547755573"
+    },
+    {
+      "type": "standard",
+      "title": "testCongress",
+      "output": {},
+      "parent": "node_2_1544547628098",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "@repType:Congress && @sys-location",
+      "dialog_node": "node_3_1544547755573",
+      "digress_out": "allow_all"
+    },
+    {
+      "type": "standard",
+      "title": "testHouseDistrict",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "The representative for $userLocation District @sys-number is ____"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1544586021514",
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "@sys-number",
+      "dialog_node": "node_2_1544586082676"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I'm not sure what that means, type 'help' to see what I can do!"
+              },
+              {
+                "text": "I'm not sure what that means, try asking who your representative is!"
+              },
+              {
+                "text": "Hmm, I don't know what that means, sorry. Try asking what bills are active!"
+              },
+              {
+                "text": "Hmm, I don't know what that means. Try asking who your representative is!"
+              },
+              {
+                "text": "I'm not sure what that means, try asking what bills are active?"
+              },
+              {
+                "text": "Hmm, I don't know what that means, sorry. Type 'help' to see what I can do!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_5_1544587126917"
+    },
+    {
+      "type": "standard",
+      "title": "Congress Rep",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What state are you from?"
+              },
+              {
+                "text": "What state do you live in?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_6_1544549546323"
+      },
+      "conditions": "#representative_congress && @repType:Congress",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1544549881935",
+      "previous_sibling": "node_4_1544586505545"
+    },
+    {
+      "type": "standard",
+      "title": "House Rep",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What state do you live in?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_1_1544586021514"
+      },
+      "conditions": "@repType:House && #representative_house",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1544586505545",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Representative",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you want your Congress Representatives or House Representatives?"
+              },
+              {
+                "text": "I just need a little more information, do you want to know your House representatives or Congress Representatives?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "userLocation": "@sys-location"
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#representative_general",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1544547628098",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_9_1544549881935"
+    },
+    {
+      "type": "standard",
+      "title": "Help",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I can answer questions such as \"Who is my representative in congress?\" and \"What bills are currently active?\""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#help",
+      "dialog_node": "node_1_1544547331437",
+      "previous_sibling": "node_2_1544547628098"
+    },
+    {
+      "type": "standard",
+      "title": "Bills",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Do you have a specific subject in mind?"
+              },
+              {
+                "text": "Any specific bill subject you want to see?"
+              },
+              {
+                "text": "Do you want to see bills under a certain subject?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#recent_bills",
+      "dialog_node": "node_5_1544587126917",
+      "previous_sibling": "node_1_1544547331437"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi there, I’m here to answer any questions you may have about legislation or legislators. Feel free to ask 'help' for a description of how I can be used."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "conversation_start",
+      "digress_in": "does_not_return",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "3df9516a-8117-4856-8a20-b947743b8418",
+  "counterexamples": [
+    {
+      "text": "fine"
+    },
+    {
+      "text": "okay"
+    }
+  ],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
