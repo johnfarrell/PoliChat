@@ -221,6 +221,35 @@ app.post('/getMessageData', function(req, res){
   res.send(result);
 })
 
+app.post('/getSenatorByState', function(req, res) {
+  console.log("getSenatorByStateRequest request recieved");
+  var senatorName = getSenatorByState();
+  var result = [];
+  result.push(senatorName);
+
+  res.send(result);
+})
+
+function getSenatorByState() {
+  var request = new XMLHttpRequest();
+  var name = "default";
+  
+  request.onload = function() {
+    if(request.readyState == 4 && request.status == 200) {
+      var jsonString = request.responseText;
+      var data = JSON.parse(jsonString);
+      
+      name = data.results[0].first_name + " " + data.results[0].last_name;
+    }
+  }
+
+  request.open('GET', 'https://api.propublica.org/congress/v1/members/senate/RI/current.json', false);
+  request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R')
+  request.send();
+
+  return name;
+}
+
 
 function getSenatorList() {
   var request = new XMLHttpRequest();
@@ -231,7 +260,6 @@ function getSenatorList() {
     if(request.readyState == 4 && request.status == 200) {
       var jsonString = request.responseText;
       var data = JSON.parse(jsonString);
-      console.log(data.results[0].members[0].first_name + " " + data.results[0].members[0].last_name)
       name = data.results[0].members[0].first_name + " " + data.results[0].members[0].last_name;
     }
   }

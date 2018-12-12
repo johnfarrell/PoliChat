@@ -140,7 +140,7 @@ var ConversationPanel = (function() {
   // Display a user or Watson message that has just been sent/received
   function displayMessage(newPayload, typeValue) {
    console.log("displayMessage");
-	 if(newPayload.output){
+   if(newPayload.output){
 		$.ajax({url: '/getMessageData', type:'post', async: false,
 		data: {
 			operation: newPayload.context.operation,
@@ -151,10 +151,22 @@ var ConversationPanel = (function() {
       $("#div1").html(result);
       console.log("data: " + result);
       console.log(newPayload);
-			//newPayload.output.text = result[0];
-			//console.log(completed);
 		}});
    }
+   if(newPayload.intents && newPayload.output) {
+     if(newPayload.intents.length != 0 && newPayload.intents[0].intent == "help") {
+       console.log("help intent");
+      $.ajax({url: '/getSenatorByState', type:'post', async: false,
+      data: {
+      },
+      success: function(result){
+        $("#div1").html(result);
+        console.log("data1: " + result);
+        newPayload.output.text = "Senator of RI is " + result;
+      }});
+     }
+   } 
+	 
     var isUser = isUserMessage(typeValue);
     var textExists = (newPayload.input && newPayload.input.text)
         || (newPayload.output && newPayload.output.text);
