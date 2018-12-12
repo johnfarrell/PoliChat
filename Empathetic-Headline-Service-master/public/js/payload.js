@@ -145,27 +145,7 @@ var PayloadPanel = (function() {
 	//this will only run if data (it isn't one of the base headlines) and finished(context variable
 	//that ensures the data is sent only once and when complete) are true
 	//this sends a survey's results to the server.
-	if(data && json.context.finished === true){
-		$.ajax({url: '/sendResults', type:'post',
-		data: {
-			name: json.context.name,
-			gender: json.context.gender,
-			age: json.context.age,
-			mood: json.context.mood,
-			mood_bias: json.context.mood_bias,
-			media_bias: json.context.media_bias,
-			context_bias: json.context.context_bias,
-			reaction: json.context.reaction,
-			reaction_value: json.context.reaction_value,
-			inspire: json.context.inspire,
-			length_score: json.context.length_score,
-			
-			sample: index
-		},
-		success: function(result){
-			
-		}});
-	}
+	
     var convert = JSON.stringify(json, null, 2);
 
     convert = convert.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
