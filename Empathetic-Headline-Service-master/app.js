@@ -30,6 +30,8 @@ var uuid = require('uuid');
 var vcapServices = require('vcap_services');
 var basicAuth = require('basic-auth-connect');
 
+var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+
 // The app owner may optionally configure a cloudand db to track user input.
 // This cloudand db is not required, the app will operate without it.
 // If logging is enabled the app must also enable basic auth to secure logging
@@ -201,7 +203,7 @@ app.post('/getLegData', function(req, res){
 	console.log("recieved request");
 	var result = [];
 	var d = new Date();
-	result.push(d.getFullYear() + " " + d.getMonth());
+  result.push(d.getFullYear() + " " + d.getMonth());
 	result.push(req.body.operation);
 	result.push(req.body.name);
 	result.push(req.body.plocation);
@@ -209,6 +211,38 @@ app.post('/getLegData', function(req, res){
 	
 	res.send("<script> var completed = true;</script>");
 });
+
+app.post('/getMessageData', function(req, res){
+  console.log("getMessageData request");
+  getSenatorList();
+  var result = [];
+
+  res.send("<script> var completed = true;</script>");
+})
+
+
+function getSenatorList() {
+  var request = new XMLHttpRequest();
+
+  // Create a new connection to senator
+  
+  request.open('GET', 'https://api.propublica.org/congress/v1/102-115/house/members.json');
+  request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R');
+  request.send();
+
+  console.log(request.responseText);
+
+  request.onreadystatechange = function() {
+
+    console.log(request);
+    var jsonString = request.responseText;
+    var data = JSON.parse(jsonString);
+    //var data = JSON.parse(request.responseText);
+
+    // console.log(data);
+  }
+
+}
 //ADDED CODE ENDS HERE
 
 
