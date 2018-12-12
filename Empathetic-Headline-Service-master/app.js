@@ -245,8 +245,9 @@ function getSenatorByState(state) {
 		  name += "<a href='https://twitter.com/"+data.results[i].twitter_id+"' target='_blank'>";
 		  name += data.results[i].first_name + " " + data.results[i].last_name;
 		  name += "</a>"
+		  name += " (" + data.results[i].party + ")";
 		  if(i !== data.results.length-1){
-			name += " (" + data.results[i].party + ") and ";
+			name += " and ";
 		  }
 	  }
     }
