@@ -53,12 +53,14 @@ var ConversationPanel = (function() {
     var currentRequestPayloadSetter = Api.setRequestPayload;
     Api.setRequestPayload = function(newPayloadStr) {
       currentRequestPayloadSetter.call(Api, newPayloadStr);
+      console.log("test");
       displayMessage(JSON.parse(newPayloadStr), settings.authorTypes.user);
     };
 
     var currentResponsePayloadSetter = Api.setResponsePayload;
     Api.setResponsePayload = function(newPayloadStr) {
       currentResponsePayloadSetter.call(Api, newPayloadStr);
+      console.log("JSON.parse(newPayloadStr)");
       displayMessage(JSON.parse(newPayloadStr), settings.authorTypes.watson);
     };
   }
@@ -137,19 +139,22 @@ var ConversationPanel = (function() {
 
   // Display a user or Watson message that has just been sent/received
   function displayMessage(newPayload, typeValue) {
-	 if(newPayload.context.operation){
-		$.ajax({url: '/getLegData', type:'post', async: false,
+   console.log("displayMessage");
+	 if(newPayload.output){
+		$.ajax({url: '/getMessageData', type:'post', async: false,
 		data: {
 			operation: newPayload.context.operation,
 			name: newPayload.context.name,
 			plocation: newPayload.context.gender,
 		},
 		success: function(result){
-			$("#div1").html(result);
-			newPayload.output.text = "completed";
-			console.log(completed);
+      $("#div1").html(result);
+      console.log("data: " + result);
+      console.log(newPayload);
+			newPayload.output.text = result[0];
+			//console.log(completed);
 		}});
-	 }
+   }
     var isUser = isUserMessage(typeValue);
     var textExists = (newPayload.input && newPayload.input.text)
         || (newPayload.output && newPayload.output.text);

@@ -214,34 +214,38 @@ app.post('/getLegData', function(req, res){
 
 app.post('/getMessageData', function(req, res){
   console.log("getMessageData request");
-  getSenatorList();
+  var senator = getSenatorList();
   var result = [];
+  result.push(senator);
 
-  res.send("<script> var completed = true;</script>");
+  res.send(result);
 })
 
 
 function getSenatorList() {
   var request = new XMLHttpRequest();
+  var name = "test";
 
   // Create a new connection to senator
+  request.onreadystatechange = function() {
+    if(request.readyState == 4 && request.status == 200) {
+      var jsonString = request.responseText;
+      var data = JSON.parse(jsonString);
+      // console.log(data.results[0].members);
+      // data.results[0].members.forEach(member => {
+      //   console.log(member.first_name + " " + member.last_name);
+      //   var m
+      // });
+      console.log(data.results[0].members[0].first_name + " " + data.results[0].members[0].last_name)
+      name = data.results[0].members[0].first_name + " " + data.results[0].members[0].last_name;
+    }
+  }
   
-  request.open('GET', 'https://api.propublica.org/congress/v1/102-115/house/members.json');
+  request.open('GET', 'https://api.propublica.org/congress/v1/115/house/members.json');
   request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R');
   request.send();
-
-  console.log(request.responseText);
-
-  request.onreadystatechange = function() {
-
-    console.log(request);
-    var jsonString = request.responseText;
-    var data = JSON.parse(jsonString);
-    //var data = JSON.parse(request.responseText);
-
-    // console.log(data);
-  }
-
+  
+  return name;
 }
 //ADDED CODE ENDS HERE
 
