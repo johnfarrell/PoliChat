@@ -222,8 +222,6 @@ app.post('/getMessageData', function(req, res){
 })
 
 app.post('/getSenatorByState', function(req, res) {
-  
-
   var senatorName = getSenatorByState(req.body.state);
   console.log("getSenatorByStateRequest " + req.body.state + "request recieved");
   var result = [];
@@ -232,9 +230,18 @@ app.post('/getSenatorByState', function(req, res) {
   res.send(result);
 })
 
+app.post('/getHouseRepsByState', function(req, res) {
+  var repString = getHouseRepsByState(req.body.state, req.body.district);
+  var result = [];
+
+  result.push(repString);
+
+  res.send(result);
+})
+
 function getSenatorByState(state) {
   var request = new XMLHttpRequest();
-  var name = "default";
+  var name = "";
   
   request.onload = function() {
     if(request.readyState == 4 && request.status == 200) {
@@ -250,6 +257,45 @@ function getSenatorByState(state) {
 
   request.open('GET', 'https://api.propublica.org/congress/v1/members/senate/'+state+'/current.json', false);
   request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R')
+  request.send();
+
+  return name;
+}
+
+function getHouseRepsByState(state, district) {
+  var request = new XMLHttpRequest();
+  var name = "";
+
+  request.onload = function() {
+    if(request.readyState == 4 && request.status == 200) {
+      var jsonString = request.responseText;
+      var data = JSON.parse(jsonString);
+
+      console.log(data);
+
+      if(data.results.length >= 5) {
+        var x;
+        for(x = 0; x < 4; x++) {
+          name += data.results[x].first_name + " " + data.results[x].last_name;
+          name += " (" + data.results[0].party + "), ";
+        }
+        name += data.results[4].first_name + " " + data.results[4].last_name;
+        name += " (" + data.results[4].party + ")";
+      }
+      else {
+        var numReps = data.results.length;
+        var x;
+        for(x = 0; x < numReps - 1; x++) {
+          name += data.results[x].first_name + " " + data.results[x].last_name;
+          name += " (" + data.results[x].party + "), ";
+        }
+        name += data.results[numReps-1].first_name + " " + data.results[numReps-1].last_name;
+        name += " (" + data.results[numReps-1].party + ")";
+      }
+    }
+  }
+  request.open('GET', 'https://api.propublica.org/congress/v1/members/house/'+state+'/'+district+'/current.json', false);
+  request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R');
   request.send();
 
   return name;

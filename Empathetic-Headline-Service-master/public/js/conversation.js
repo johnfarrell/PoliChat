@@ -167,6 +167,22 @@ var ConversationPanel = (function() {
       }});
      }
    } 
+   if(newPayload.context && newPayload.output) {
+     if(newPayload.context.length != 0 && newPayload.context.userLocation && newPayload.context.repDistrict) {
+       console.log("Find house reps intent");
+       $.ajax({url: '/getHouseRepsByState', type:'post', async: false,
+       data: {
+         state: newPayload.context.userLocation,
+         district: newPayload.context.repDistrict,
+       },
+       success: function(result){
+         $("#div1").html(result);
+         var outputText = "The representatives for the house for " + newPayload.context.userLocation + " district number ";
+         outputText += newPayload.context.repDistrict + " are " + result;
+         newPayload.output.text = outputText;
+       }});
+     }
+   }
 	 
     var isUser = isUserMessage(typeValue);
     var textExists = (newPayload.input && newPayload.input.text)
