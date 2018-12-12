@@ -46,7 +46,10 @@ div {
 
 #contentParent {
   height: 100%;
+  
 }
+
+
 
 .responsive-columns-wrapper {
   display: -ms-flexbox;
@@ -64,6 +67,15 @@ div {
   overflow: auto;
 }
 
+#imageborder{
+	background-image: url("http://icons.iconarchive.com/icons/iconka/landmarks/256/washington-whitehouse-icon.png");
+}
+
+.one{
+	background-image: url("http://icons.iconarchive.com/icons/iconka/landmarks/256/washington-whitehouse-icon.png");
+	min-width: 16rem;
+}
+
 #chat-column-holder {
   text-align: center;
 }
@@ -73,7 +85,7 @@ div {
   padding: 0.9375rem 0 0.625rem 0;
   margin: auto;
   text-align: left;
-  max-width: 25rem;
+  max-width: 50rem;
   min-width: 10rem;
 }
 
