@@ -329,10 +329,430 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "Alaska",
+          "value": "SC",
           "synonyms": [
-            "alaska",
-            "ak"
+            "South Carolina",
+            "SC"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "NY",
+          "synonyms": [
+            "New York",
+            "NY"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "NC",
+          "synonyms": [
+            "North Carolina",
+            "NC"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "ND",
+          "synonyms": [
+            "North Dakota",
+            "ND"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "OH",
+          "synonyms": [
+            "Ohio",
+            "OH"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "TX",
+          "synonyms": [
+            "Texas",
+            "TX"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "WY",
+          "synonyms": [
+            "Wyoming",
+            "WY"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "OK",
+          "synonyms": [
+            "Oklahoma",
+            "OK"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "OR",
+          "synonyms": [
+            "Oregon",
+            "OR"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "RI",
+          "synonyms": [
+            "Rhode Island",
+            "RI"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "VA",
+          "synonyms": [
+            "Virginia",
+            "VA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "SD",
+          "synonyms": [
+            "South Dakota",
+            "SD"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "TN",
+          "synonyms": [
+            "Tennessee",
+            "TN"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "VT",
+          "synonyms": [
+            "Vermont",
+            "VT"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "WA",
+          "synonyms": [
+            "Washington",
+            "WA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "WI",
+          "synonyms": [
+            "Wisconsin",
+            "WI"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "WV",
+          "synonyms": [
+            "West Virginia",
+            "WV"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "AL",
+          "synonyms": [
+            "Alabama",
+            "bama",
+            "AL"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "AS",
+          "synonyms": [
+            "American Samoa",
+            "samoa",
+            "AS"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "AK",
+          "synonyms": [
+            "Alaska",
+            "AK"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "AZ",
+          "synonyms": [
+            "Arizona",
+            "AZ"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "AR",
+          "synonyms": [
+            "Arkansas",
+            "AR"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "CA",
+          "synonyms": [
+            "California",
+            "CA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "CO",
+          "synonyms": [
+            "Colorado",
+            "CO"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "CT",
+          "synonyms": [
+            "Connecticut",
+            "CT"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "DE",
+          "synonyms": [
+            "Delaware",
+            "DE"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "DC",
+          "synonyms": [
+            "Disctrict of Columbia",
+            "Washington DC",
+            "dc"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "FL",
+          "synonyms": [
+            "Florida",
+            "FL"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "GA",
+          "synonyms": [
+            "Georgia",
+            "GA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "GU",
+          "synonyms": [
+            "Guam",
+            "GU"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "HI",
+          "synonyms": [
+            "Hawaii",
+            "HI"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "ID",
+          "synonyms": [
+            "Idaho",
+            "ID"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "IL",
+          "synonyms": [
+            "Illinois",
+            "IL"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "IN",
+          "synonyms": [
+            "Indiana",
+            "IN"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "IA",
+          "synonyms": [
+            "Iowa",
+            "IA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "KS",
+          "synonyms": [
+            "Kansas",
+            "KS"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "MA",
+          "synonyms": [
+            "Massachusetts",
+            "MA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "NE",
+          "synonyms": [
+            "Nebraska",
+            "NE"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "KY",
+          "synonyms": [
+            "Kentucky",
+            "KY"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "MI",
+          "synonyms": [
+            "Michigan",
+            "MI"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "MS",
+          "synonyms": [
+            "Mississippi",
+            "MS"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "LA",
+          "synonyms": [
+            "Louisiana",
+            "LA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "ME",
+          "synonyms": [
+            "Maine",
+            "ME"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "MD",
+          "synonyms": [
+            "Maryland",
+            "MD"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "MN",
+          "synonyms": [
+            "Minnesota",
+            "MN"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "MO",
+          "synonyms": [
+            "Missouri",
+            "MO"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "NV",
+          "synonyms": [
+            "Nevada",
+            "NV"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "MT",
+          "synonyms": [
+            "Montana",
+            "MT"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "NH",
+          "synonyms": [
+            "New Hampshire",
+            "NH"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "PA",
+          "synonyms": [
+            "Pennsylvania",
+            "PA"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "NJ",
+          "synonyms": [
+            "New Jersey",
+            "Jersey",
+            "NJ"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "UT",
+          "synonyms": [
+            "Utah",
+            "UT"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "NM",
+          "synonyms": [
+            "New Mexico",
+            "NM"
           ]
         }
       ],
@@ -432,10 +852,10 @@
       },
       "parent": "node_4_1544548062060",
       "context": {
-        "userLocation": "@sys-location"
+        "userLocation": "@State"
       },
       "metadata": {},
-      "conditions": "@sys-location",
+      "conditions": "@State",
       "dialog_node": "node_1_1544586021514"
     },
     {
@@ -530,6 +950,7 @@
         ]
       },
       "parent": "node_3_1544547755573",
+      "disabled": true,
       "metadata": {},
       "next_step": {
         "behavior": "jump_to",
@@ -586,6 +1007,7 @@
         ]
       },
       "parent": "node_3_1544547755573",
+      "disabled": true,
       "metadata": {},
       "dialog_node": "node_11_1544588355456",
       "previous_sibling": "node_9_1544588021954"
@@ -596,7 +1018,7 @@
       "output": {
         "text": {
           "values": [
-            "The Congressional representative for @sys-location is ____"
+            "The Congressional representative for @State is"
           ],
           "selection_policy": "sequential"
         }
@@ -610,7 +1032,7 @@
         }
       ],
       "context": {
-        "variable_name": "@sys-location"
+        "congress": "@repType"
       },
       "metadata": {},
       "next_step": {
@@ -618,7 +1040,7 @@
         "selector": "condition",
         "dialog_node": "Welcome"
       },
-      "conditions": "@sys-location",
+      "conditions": "@State",
       "dialog_node": "node_6_1544549546323"
     },
     {
@@ -673,14 +1095,26 @@
     {
       "type": "standard",
       "title": "testCongress",
-      "output": {},
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What state are you from?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
       "parent": "node_2_1544547628098",
       "metadata": {
         "_customization": {
-          "mcr": true
+          "mcr": false
         }
       },
-      "conditions": "@repType:Congress && @sys-location",
+      "conditions": "@repType:Congress",
       "dialog_node": "node_3_1544547755573",
       "digress_out": "allow_all"
     },

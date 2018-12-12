@@ -153,16 +153,17 @@ var ConversationPanel = (function() {
       console.log(newPayload);
 		}});
    }
-   if(newPayload.intents && newPayload.output) {
-     if(newPayload.intents.length != 0 && newPayload.intents[0].intent == "help") {
+   if(newPayload.actions && newPayload.output) {
+     if(newPayload.actions.length != 0 && newPayload.actions[0].result_variable == "senatorList") {
        console.log("help intent");
       $.ajax({url: '/getSenatorByState', type:'post', async: false,
       data: {
+        state: newPayload.entities[1].value,
       },
       success: function(result){
         $("#div1").html(result);
         console.log("data1: " + result);
-        newPayload.output.text = "Senator of RI is " + result;
+        newPayload.output.text = "The senators of " + newPayload.input.text + " are " + result + ".";
       }});
      }
    } 

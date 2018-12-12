@@ -214,23 +214,25 @@ app.post('/getLegData', function(req, res){
 
 app.post('/getMessageData', function(req, res){
   console.log("getMessageData request");
-  var senator = getSenatorList();
+  //var senator = getSenatorList();
   var result = [];
-  result.push(senator);
+  //result.push(senator);
 
   res.send(result);
 })
 
 app.post('/getSenatorByState', function(req, res) {
-  console.log("getSenatorByStateRequest request recieved");
-  var senatorName = getSenatorByState();
+  
+
+  var senatorName = getSenatorByState(req.body.state);
+  console.log("getSenatorByStateRequest " + req.body.state + "request recieved");
   var result = [];
   result.push(senatorName);
 
   res.send(result);
 })
 
-function getSenatorByState() {
+function getSenatorByState(state) {
   var request = new XMLHttpRequest();
   var name = "default";
   
@@ -240,10 +242,13 @@ function getSenatorByState() {
       var data = JSON.parse(jsonString);
       
       name = data.results[0].first_name + " " + data.results[0].last_name;
+      name += " (" + data.results[0].party + ") and ";
+      name += data.results[1].first_name + " " + data.results[1].last_name;
+      name += " (" + data.results[1].party + ")";
     }
   }
 
-  request.open('GET', 'https://api.propublica.org/congress/v1/members/senate/RI/current.json', false);
+  request.open('GET', 'https://api.propublica.org/congress/v1/members/senate/'+state+'/current.json', false);
   request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R')
   request.send();
 
