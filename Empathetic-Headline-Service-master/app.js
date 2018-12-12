@@ -197,24 +197,17 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //json response for recieving finalized data of survey
-app.post('/sendResults', function(req, res){
-	console.log("recieved response from " + req.body.name);
+app.post('/getLegData', function(req, res){
+	console.log("recieved request");
 	var result = [];
 	var d = new Date();
 	result.push(d.getFullYear() + " " + d.getMonth());
+	result.push(req.body.operation);
 	result.push(req.body.name);
-	result.push(req.body.age);
-	result.push(req.body.gender);
-	result.push(req.body.mood_bias);
-	result.push(req.body.media_bias);
-	result.push(req.body.context_bias);
-	result.push(req.body.reaction);
-	result.push(req.body.reaction_value);
-	result.push(req.body.inspire);
-	result.push(req.body.length_score);
-	var sample = req.body.sample;
-	Results[sample].push(result);
-	numresponses[sample]++;
+	result.push(req.body.plocation);
+	console.log(result);
+	
+	res.send("<script> var completed = true;</script>");
 });
 //ADDED CODE ENDS HERE
 

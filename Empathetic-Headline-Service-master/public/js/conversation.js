@@ -137,6 +137,19 @@ var ConversationPanel = (function() {
 
   // Display a user or Watson message that has just been sent/received
   function displayMessage(newPayload, typeValue) {
+	 if(newPayload.context.operation){
+		$.ajax({url: '/getLegData', type:'post', async: false,
+		data: {
+			operation: newPayload.context.operation,
+			name: newPayload.context.name,
+			plocation: newPayload.context.gender,
+		},
+		success: function(result){
+			$("#div1").html(result);
+			newPayload.output.text = "completed";
+			console.log(completed);
+		}});
+	 }
     var isUser = isUserMessage(typeValue);
     var textExists = (newPayload.input && newPayload.input.text)
         || (newPayload.output && newPayload.output.text);
