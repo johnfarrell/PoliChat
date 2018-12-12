@@ -261,7 +261,7 @@ function getSenatorByState(state) {
   }
 
   request.open('GET', 'https://api.propublica.org/congress/v1/members/senate/'+state+'/current.json', false);
-  request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R')
+  request.setRequestHeader('X-API-Key', '')
   request.send();
 
   return name;
@@ -310,7 +310,7 @@ function getHouseRepsByState(state, district) {
     }
   }
   request.open('GET', 'https://api.propublica.org/congress/v1/members/house/'+state+'/'+district+'/current.json', false);
-  request.setRequestHeader('X-API-Key', 'sRuDTqWN9FrPpXnYMmwWiq5B2caHhpkngcrWNV9R');
+  request.setRequestHeader('X-API-Key', '');
   request.send();
 
   return name;
