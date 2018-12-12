@@ -167,8 +167,8 @@ var ConversationPanel = (function() {
       }});
      }
    } 
-   if(newPayload.context && newPayload.output) {
-     if(newPayload.context.length != 0 && newPayload.context.userLocation && newPayload.context.repDistrict) {
+   if(newPayload.actions && newPayload.output) {
+     if(newPayload.actions.length != 0 && newPayload.actions[0].result_variable == "showHouseReps") {
        console.log("Find house reps intent");
        $.ajax({url: '/getHouseRepsByState', type:'post', async: false,
        data: {

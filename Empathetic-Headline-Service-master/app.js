@@ -278,6 +278,8 @@ function getHouseRepsByState(state, district) {
 
       console.log(data);
 
+      // TODO
+      // There can only be one rep per district, remove all the extra code
       if(data.results.length >= 5) {
         var x;
         for(x = 0; x < 4; x++) {
@@ -294,7 +296,9 @@ function getHouseRepsByState(state, district) {
           name += data.results[x].first_name + " " + data.results[x].last_name;
           name += " (" + data.results[x].party + "), ";
         }
+        name += "<a href='https://twitter.com/"+data.results[numReps-1].twitter_id+"' target='_blank'>";
         name += data.results[numReps-1].first_name + " " + data.results[numReps-1].last_name;
+        name += "</a>"
         name += " (" + data.results[numReps-1].party + ")";
       }
     }
